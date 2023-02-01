@@ -1,0 +1,14 @@
+apiVersion: sql.tanzu.vmware.com/v1
+kind: Postgres
+metadata:
+  name: petclinic
+spec:
+  memory: 800Mi
+  cpu: "0.8"
+  storageClassName: standard
+  monitorStorageClassName: standard
+  storageSize: 2G
+  pgConfig:
+    dbname: petclinic
+    username: pgadmin
+    appUser: pgappuser
