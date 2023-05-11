@@ -11,5 +11,5 @@ tanzu service class-claim create petclinic-database --class postgresql-unmanaged
 Deploy the PetClinic app:
 
 ```sh
-tanzu apps workload create petclinic -f config/workload.yaml
+tanzu apps workload create petclinic -f config/workload.yaml -n <workload-namespace>
 ```
