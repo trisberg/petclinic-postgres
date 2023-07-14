@@ -58,9 +58,9 @@ spec:
         autoscaling.knative.dev/min-scale: "1"
   source:
     git:
-      url: https://github.com/spring-projects/spring-petclinic
+      url: https://github.com/trisberg/spring-petclinic
       ref:
-        branch: main
+        branch: native
   serviceClaims:
     - name: postgres-db
       ref:
