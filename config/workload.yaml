@@ -1,11 +1,11 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: spring-petclinic
+  name: spring-petclinic-native
   labels:
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: spring-petclinic
+    app.kubernetes.io/part-of: spring-petclinic-native
 spec:
   build:
     env:
@@ -31,11 +31,13 @@ spec:
       value: "8081"
     - name: SERVER_PORT
       value: "8080"
+    - name: SPRING_PROFILES_ACTIVE
+      value: postgres
     - name: SERVICE_BINDING_ROOT
       value: /bindings
+    - name: ORG_SPRINGFRAMEWORK_CLOUD_BINDINGS_BOOT_ENABLE
+      value: "true"
   env:
-  - name: SPRING_PROFILES_ACTIVE
-    value: postgres
   - name: MANAGEMENT_HEALTH_PROBES_ENABLED
     value: "true"
   - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
@@ -50,8 +52,12 @@ spec:
     value: "8081"
   - name: SERVER_PORT
     value: "8080"
+  - name: SPRING_PROFILES_ACTIVE
+    value: postgres
   - name: SERVICE_BINDING_ROOT
     value: /bindings
+  - name: ORG_SPRINGFRAMEWORK_CLOUD_BINDINGS_BOOT_ENABLE
+    value: "true"
   params:
     - name: annotations
       value:
