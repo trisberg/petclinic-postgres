@@ -13,9 +13,45 @@ spec:
       value: skip
     - name: BP_JVM_VERSION
       value: "17"
+    - name: BP_NATIVE_IMAGE
+      value: "true"
+    - name: BP_MAVEN_ACTIVE_PROFILES
+      value: "native"
+    - name: MANAGEMENT_HEALTH_PROBES_ENABLED
+      value: "true"
+    - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
+      value: "true"
+    - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
+      value: always
+    - name: MANAGEMENT_ENDPOINTS_WEB_BASE_PATH
+      value: /actuator
+    - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+      value: '*'
+    - name: MANAGEMENT_SERVER_PORT
+      value: "8081"
+    - name: SERVER_PORT
+      value: "8080"
+    - name: SERVICE_BINDING_ROOT
+      value: /bindings
   env:
   - name: SPRING_PROFILES_ACTIVE
     value: postgres
+  - name: MANAGEMENT_HEALTH_PROBES_ENABLED
+    value: "true"
+  - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
+    value: "true"
+  - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
+    value: always
+  - name: MANAGEMENT_ENDPOINTS_WEB_BASE_PATH
+    value: /actuator
+  - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+    value: '*'
+  - name: MANAGEMENT_SERVER_PORT
+    value: "8081"
+  - name: SERVER_PORT
+    value: "8080"
+  - name: SERVICE_BINDING_ROOT
+    value: /bindings
   params:
     - name: annotations
       value:
