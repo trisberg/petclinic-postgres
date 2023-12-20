@@ -9,7 +9,7 @@ metadata:
 spec:
   build:
     env:
-    - name: BP_GRADLE_BUILD_FILE
+    - name: BP_MAVEN_POM_FILE
       value: skip
     - name: BP_JVM_VERSION
       value: "17"
