@@ -13,6 +13,9 @@ spec:
       value: skip
     - name: BP_JVM_VERSION
       value: "17"
+    - name: BP_GRADLE_BUILT_ARTIFACT
+      value: "build/libs/spring-petclinic-3.2.0.jar"
+
   env:
   - name: SPRING_PROFILES_ACTIVE
     value: postgres
